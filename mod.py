@@ -266,13 +266,16 @@ t = inputE[w_type-1]
 ###########################################################
 
 # Show c value
-print("(Method: b | e | m |  --> c)")
-for i in range(len(type8E)):
-
+print("(Method: b | e | m |  --> time)")
+for i in range(0, len(type8E), 11):
     print(
-        f"Sqrt And Mul : {inputB[w_type-1]} | {inputE[w_type-1][i]} | {inputM[w_type-1]} |  --> {resSquareAndMulMethod[i]}")
+        f"Memory Efficient Method : {inputB[w_type-1]} | {inputE[w_type-1][i]} | {inputM[w_type-1]} |  --> {timeMemoryEffMethod[i]}")
     print(
-        f"Expo Mod W/ Sqrt : {inputB[w_type-1]} | {inputE[w_type-1][i]} [e mod (m-1) = {new_e_ls[i]}] | {inputM[w_type-1]}| --> {resExponentModularWithSquareMethod[i]}")
+        f"Sqrt And Mul Method : {inputB[w_type-1]} | {inputE[w_type-1][i]} | {inputM[w_type-1]} |  --> {timeSquareAndMulMethod[i]}")
+    print(
+        f"Expo Mod Method : {inputB[w_type-1]} | {inputE[w_type-1][i]} | {inputM[w_type-1]} |  --> {timeExponentModularMethod[i]}")
+    print(
+        f"Expo Mod W/ Sqrt : {inputB[w_type-1]} | {inputE[w_type-1][i]}  | {inputM[w_type-1]}| --> {timeExponentModularWithSquareMethod[i]}")
 
 
 ############################# PLOT ALL METHODS ##########################
@@ -286,35 +289,35 @@ ax1.set_ylabel(
     f"Computation time in ms [ b = {inputB[w_type-1]} | m = {inputM[w_type-1]} ] ", fontsize=10)
 
 
-# ax1.plot(x_e, timeMemoryEffMethod,
-#          label="Memory Efficient Method", marker="o")
+ax1.plot(x_e, timeMemoryEffMethod,
+         ".", color="red")
 
 m, b = np.polyfit(x_e, timeMemoryEffMethod, 1)
 ax1.plot(x_e, m*x_e+b,
-         label="Memory Efficient Method")
+         label="Memory Efficient Method", color="red")
 
 
 
-# ax1.plot(x_e, timeSquareAndMulMethod,
-#          label="Square And Multiply Algorithm", marker="o")
+ax1.plot(x_e, timeSquareAndMulMethod,
+         ".", color="blue")
 m, b = np.polyfit(x_e, timeSquareAndMulMethod, 1)
 ax1.plot(x_e, m*x_e+b,
-         label="Square And Multiply Algorithm")
+         label="Square And Multiply Algorithm", color="blue")
 
 
-# ax1.plot(x_e, timeExponentModularMethod,
-#          label="Exponential And Modular Method", marker="o")
+ax1.plot(x_e, timeExponentModularMethod,
+         ".", color="orange")
 m, b = np.polyfit(x_e, timeExponentModularMethod, 1)
 ax1.plot(x_e, m*x_e+b,
-         label="Exponential And Modular Method")
+         label="Exponential And Modular Method", color="orange")
 
 
 
-# ax1.plot(x_e, timeExponentModularWithSquareMethod,
-#          label="Exponential And Modular With Square Method", marker="o")
+ax1.plot(x_e, timeExponentModularWithSquareMethod,
+         ".", color="green")
 m, b = np.polyfit(x_e, timeExponentModularWithSquareMethod, 1)
 ax1.plot(x_e, m*x_e+b,
-         label="Exponential And Modular With Square Method")
+         label="Exponential And Modular With Square Method", color="green")
 
 
 
@@ -342,29 +345,29 @@ ax2.set_title(
     "All Methods", fontsize=10)
 ax2.set_xlabel("e value (log)", fontsize=10)
 
-# ax2.plot(x_log, timeMemoryEffMethod,
-#          label="Memory Efficient Method", marker="o")
+ax2.plot(x_log, timeMemoryEffMethod,
+         ".", color="red")
 m, b = np.polyfit(x_e, timeMemoryEffMethod, 1)
 ax2.plot(x_log, m*x_e+b,
-         label="Memory Efficient Method")
+         label="Memory Efficient Method", color="red")
 
-# ax2.plot(x_log, timeSquareAndMulMethod,
-        #  label="Square And Multiply Algorithm", marker="o")
+ax2.plot(x_log, timeSquareAndMulMethod,
+         ".", color="blue")
 m, b = np.polyfit(x_e, timeSquareAndMulMethod, 1)
 ax2.plot(x_log, m*x_e+b,
-         label="Square And Multiply Algorithm")
+         label="Square And Multiply Algorithm", color="blue")
 
-# ax2.plot(x_log, timeExponentModularMethod,
-#          label="Exponential And Modular Method", marker="o")
+ax2.plot(x_log, timeExponentModularMethod,
+         ".", color="orange")
 m, b = np.polyfit(x_e, timeExponentModularMethod, 1)
 ax2.plot(x_log, m*x_e+b,
-         label="Exponential And Modular Method")
+         label="Exponential And Modular Method", color="orange")
 
-# ax2.plot(x_log, timeExponentModularWithSquareMethod,
-#          label="Exponential And Modular With Square Method", marker="o")
+ax2.plot(x_log, timeExponentModularWithSquareMethod,
+         ".", color="green")
 m, b = np.polyfit(x_e, timeExponentModularWithSquareMethod, 1)
 ax2.plot(x_log, m*x_e+b,
-         label="Exponential And Modular With Square Method")
+         label="Exponential And Modular With Square Method", color="green")
 
 
 # for i in range(0, len(t), 10):
@@ -396,17 +399,17 @@ ax1.set_xlabel("e value", fontsize=10)
 ax1.set_ylabel(
     f"Computation time in ms [ b = {inputB[w_type-1]} | m = {inputM[w_type-1]} ] ", fontsize=10)
 
-# ax1.plot(x_e, timeSquareAndMulMethod,
-#          label="Square And Multiply Algorithm", marker="o", color="orange")
+ax1.plot(x_e, timeSquareAndMulMethod,
+         ".", color="orange")
 m, b = np.polyfit(x_e, timeSquareAndMulMethod, 1)
 ax1.plot(x_e, m*x_e+b,
          label="Square And Multiply Algorithm", color="orange")
 
-# ax1.plot(x_e, timeExponentModularWithSquareMethod,
-#          label="Exponential And Modular With Square Method", marker="o", color="red")
+ax1.plot(x_e, timeExponentModularWithSquareMethod,
+         ".", color="green")
 m, b = np.polyfit(x_e, timeExponentModularWithSquareMethod, 1)
 ax1.plot(x_e, m*x_e+b,
-         label="Exponential And Modular With Square Method", color="red")
+         label="Exponential And Modular With Square Method", color="green")
 
 
 for i in range(0, len(t), 10):
@@ -421,17 +424,17 @@ ax2.set_xscale("log")
 ax2.set_title(
     "SquareAndMul & ExpoWithSquareMethod", fontsize=10)
 ax2.set_xlabel("e value (log)", fontsize=10)
-# ax2.plot(x_log, timeSquareAndMulMethod,
-#          label="Square and Multiply Algorithm", marker="o", color="orange")
+ax2.plot(x_log, timeSquareAndMulMethod,
+         ".", color="orange")
 m, b = np.polyfit(x_e, timeSquareAndMulMethod, 1)
 ax2.plot(x_log, m*x_e+b,
          label="Square And Multiply Algorithm", color="orange")
 
-# ax2.plot(x_log, timeExponentModularWithSquareMethod,
-#          label="Exponential And Modular With Square Method", marker="o", color="red")
+ax2.plot(x_log, timeExponentModularWithSquareMethod,
+         ".", color="green")
 m, b = np.polyfit(x_e, timeExponentModularWithSquareMethod, 1)
 ax2.plot(x_log, m*x_e+b,
-         label="Exponential And Modular With Square Method", color="red")
+         label="Exponential And Modular With Square Method", color="green")
 
 
 # for i in range(0, len(t), 10):
