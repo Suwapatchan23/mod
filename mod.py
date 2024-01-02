@@ -191,7 +191,7 @@ type6E = [202067, 202087, 218627, 221471,
 type7B = 516
 type7M = 5557
 type7E = [5639, 6053, 6673, 7207, 7853, 8231, 8941, 9133, 9463, 10037,
-          11161, 12781, 13553, 13963, 14591, 14681, 14791 , 14965,  15061, 15823, 16883, 17449, 18587]
+          11161, 12781, 13553, 13963, 14591, 15061, 15823, 16883, 17449, 18587]
 # type7E = np.arange(type7M, type7M + (414 * 100), 414)
 
 # 2.3
@@ -239,7 +239,7 @@ n_loop = 100
 
 ############################################################
 #  For calculating result
-for i in range(len(type9E)):
+for i in range(len(type7E)):
     for j in range(n_loop):
         # resMemoryEffMethod.append(
         #     memory_efficient_method(inputB[w_type-1], inputE[w_type-1][i], inputM[w_type-1])[0])
@@ -283,7 +283,7 @@ t = inputE[w_type-1]
 
 # Show c value
 print("(Method: b | e | m |  --> time)")
-for i in range(0, len(type9E)):
+for i in range(0, len(type7E)):
     print(
         f"Memory Efficient Method : {inputB[w_type-1]} | {inputE[w_type-1][i]} | {inputM[w_type-1]} |  --> {timeMemoryEffMethod[i]}")
     print(
