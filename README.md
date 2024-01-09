@@ -1,1 +1,3 @@
-method 4 -> วิธีการมอดุโลตัวชี้กำลังร่วมกับการยกกำลังด้วยการยกกำลังสอ (Modulo the exponent with Exponentiation by squaring)
+<!-- @format -->
+
+method 4 -> วิธีการมอดุโลตัวชี้กำลังร่วมกับการยกกำลังด้วยการยกกำลังสอง (Modulo the exponent with Exponentiation by squaring)

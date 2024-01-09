@@ -329,7 +329,7 @@ ax1.plot(x_e, timeExponentModularMethod, '-.',
 
 
 ax1.plot(x_e, timeExponentModularWithSquareMethod,
-         color="green", label="Exponentiation And Modular With Squaring Method", marker="x")
+         color="green", label="Modulo the exponent with Exponentiation by squaring Method", marker="x")
 # m, b = np.polyfit(x_e, timeExponentModularWithSquareMethod, 1)
 # ax1.plot(x_e, m*x_e+b,
 #          label="Exponential And Modular With Square Method", color="green")
@@ -377,7 +377,7 @@ ax2.plot(x_log, timeExponentModularMethod, '-.',
 #          label="Exponential And Modular Method", color="orange")
 
 ax2.plot(x_log, timeExponentModularWithSquareMethod,
-         color="green", label="Exponentiation And Modular With Squaring Method", marker="x")
+         color="green", label="Modulo the exponent with Exponentiation by squaring Method", marker="x")
 # m, b = np.polyfit(x_e, timeExponentModularWithSquareMethod, 1)
 # ax2.plot(x_log, m*x_e+b,
 #          label="Exponential And Modular With Square Method", color="green")
@@ -406,7 +406,7 @@ ax2.grid()
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 8))
 ########################## PLOTTING E GRAPH ###########################
 ax1.set_title(
-    "Exponentiation by Squaring Method and \n Exponentiation And Modular With Squaring Method", fontsize=10)
+    "Exponentiation by Squaring Method and \n Modulo the exponent with Exponentiation by squaring Method", fontsize=10)
 ax1.set_xlabel("e value", fontsize=10)
 
 ax1.set_ylabel(
@@ -419,7 +419,7 @@ ax1.plot(x_e, timeSquareAndMulMethod, ':',
 #          label="Square And Multiply Algorithm", color="orange")
 
 ax1.plot(x_e, timeExponentModularWithSquareMethod,
-         color="green", label="Exponentiation And Modular With Squaring Method", marker="x")
+         color="green", label="Modulo the exponent with Exponentiation by squaring Method", marker="x")
 # m, b = np.polyfit(x_e, timeExponentModularWithSquareMethod, 1)
 # ax1.plot(x_e, m*x_e+b,
 #          label="Exponential And Modular With Square Method", color="green")
@@ -435,7 +435,7 @@ ax1.grid()
 ########################## PLOTTING LOG(E) GRAPH ###########################
 ax2.set_xscale("log")
 ax2.set_title(
-    "Exponentiation by Squaring Method and \n Exponentiation And Modular With Squaring Method", fontsize=10)
+    "Exponentiation by Squaring Method and \n Modulo the exponent with Exponentiation by squaring Method", fontsize=10)
 ax2.set_xlabel("e value (log)", fontsize=10)
 ax2.plot(x_log, timeSquareAndMulMethod, ':',
          color="blue", label="Exponentiation by Squaring Method", marker="+")
@@ -444,7 +444,7 @@ ax2.plot(x_log, timeSquareAndMulMethod, ':',
 #          label="Square And Multiply Algorithm", color="orange")
 
 ax2.plot(x_log, timeExponentModularWithSquareMethod,
-         color="green", label="Exponentiation And Modular With Squaring Method", marker="x")
+         color="green", label="Modulo the exponent with Exponentiation by squaring Method", marker="x")
 # m, b = np.polyfit(x_e, timeExponentModularWithSquareMethod, 1)
 # ax2.plot(x_log, m*x_e+b,
 #          label="Exponential And Modular With Square Method", color="green")
