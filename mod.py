@@ -307,7 +307,7 @@ ax1.set_ylabel(
 
 
 ax1.plot(x_e, timeMemoryEffMethod, '--',
-         color="red", label="Memory Efficient Method", marker="o")
+         color="red", label="Memory Efficient", marker="o")
 
 # m, b = np.polyfit(x_e, timeMemoryEffMethod, 1)
 # ax1.plot(x_e, m*x_e+b,
@@ -315,21 +315,21 @@ ax1.plot(x_e, timeMemoryEffMethod, '--',
 
 
 ax1.plot(x_e, timeSquareAndMulMethod, ':',
-         color="blue", label="Exponentiation by Squaring Method", marker="+")
+         color="blue", label="Exponentiation by Squaring", marker="+")
 # m, b = np.polyfit(x_e, timeSquareAndMulMethod, 1)
 # ax1.plot(x_e, m*x_e+b,
 #          label="Square And Multiply Algorithm", color="blue")
 
 
 ax1.plot(x_e, timeExponentModularMethod, '-.',
-         color="orange", label="Exponentiation And Modular Method", marker="d")
+         color="orange", label="Exponentiation And Modular", marker="d")
 # m, b = np.polyfit(x_e, timeExponentModularMethod, 1)
 # ax1.plot(x_e, m*x_e+b,
 #          label="Exponential And Modular Method", color="orange")
 
 
 ax1.plot(x_e, timeExponentModularWithSquareMethod,
-         color="green", label="Modulo the exponent with Exponentiation by squaring Method", marker="x")
+         color="green", label="Modulo the exponent with Exponentiation by squaring", marker="x")
 # m, b = np.polyfit(x_e, timeExponentModularWithSquareMethod, 1)
 # ax1.plot(x_e, m*x_e+b,
 #          label="Exponential And Modular With Square Method", color="green")
@@ -351,33 +351,34 @@ for i in range(0, len(t)):
 
 # plt.yticks(np.arange(0, 10, 0.01))
 ax1.grid()
+ax1.legend(fontsize=10)
 
 ########################## PLOTTING LOG(E) GRAPH ###########################
 ax2.set_xscale("log")
 ax2.set_title(
     "All Methods", fontsize=10)
-ax2.set_xlabel("e value (log)", fontsize=10)
+ax2.set_xlabel("ln(e) value", fontsize=10)
 
 ax2.plot(x_log, timeMemoryEffMethod, '--',
-         color="red", label="Memory Efficient Method", marker="o")
+         color="red", label="Memory Efficient", marker="o")
 # m, b = np.polyfit(x_e, timeMemoryEffMethod, 1)
 # ax2.plot(x_log, m*x_e+b,
 #          label="Memory Efficient Method", color="red")
 
 ax2.plot(x_log, timeSquareAndMulMethod, ':',
-         color="blue", label="Exponentiation by Squaring Method", marker="+")
+         color="blue", label="Exponentiation by Squaring", marker="+")
 # m, b = np.polyfit(x_e, timeSquareAndMulMethod, 1)
 # ax2.plot(x_log, m*x_e+b,
 #          label="Square And Multiply Algorithm", color="blue")
 
 ax2.plot(x_log, timeExponentModularMethod, '-.',
-         color="orange", label="Exponentiation And Modular Method", marker="d")
+         color="orange", label="Exponentiation And Modular", marker="d")
 # m, b = np.polyfit(x_e, timeExponentModularMethod, 1)
 # ax2.plot(x_log, m*x_e+b,
 #          label="Exponential And Modular Method", color="orange")
 
 ax2.plot(x_log, timeExponentModularWithSquareMethod,
-         color="green", label="Modulo the exponent with Exponentiation by squaring Method", marker="x")
+         color="green", label="Modulo the exponent with Exponentiation by squaring", marker="x")
 # m, b = np.polyfit(x_e, timeExponentModularWithSquareMethod, 1)
 # ax2.plot(x_log, m*x_e+b,
 #          label="Exponential And Modular With Square Method", color="green")
@@ -396,7 +397,7 @@ ax2.plot(x_log, timeExponentModularWithSquareMethod,
 
 #     ax2.annotate(f"log(e) = {round(x_log[i], 2)}", (x_log[i],
 #                  timeExponentModularWithSquareMethod[i]), fontsize=7)
-plt.legend(fontsize=15)
+ax2.legend(fontsize=10)
 # plt.yticks(np.arange(0, timeMemoryEffMethod[-1], timeMemoryEffMethod[-1]/10))
 # plt.ylim(0, timeMemoryEffMethod[0])
 ax2.grid()
@@ -413,13 +414,13 @@ ax1.set_ylabel(
     f"Computation time in ms [ b = {inputB[w_type-1]} | m = {inputM[w_type-1]} ] ", fontsize=10)
 
 ax1.plot(x_e, timeSquareAndMulMethod, ':',
-         color="blue", label="Exponentiation by Squaring Method", marker="+")
+         color="blue", label="Exponentiation by Squaring", marker="+")
 # m, b = np.polyfit(x_e, timeSquareAndMulMethod, 1)
 # ax1.plot(x_e, m*x_e+b,
 #          label="Square And Multiply Algorithm", color="orange")
 
 ax1.plot(x_e, timeExponentModularWithSquareMethod,
-         color="green", label="Modulo the exponent with Exponentiation by squaring Method", marker="x")
+         color="green", label="Modulo the exponent with Exponentiation by squaring", marker="x")
 # m, b = np.polyfit(x_e, timeExponentModularWithSquareMethod, 1)
 # ax1.plot(x_e, m*x_e+b,
 #          label="Exponential And Modular With Square Method", color="green")
@@ -431,20 +432,21 @@ for i in range(0, len(t)):
     ax1.annotate(f"e = {x_e[i]}", (x_e[i],
                  timeExponentModularWithSquareMethod[i]), fontsize=7)
 ax1.grid()
+ax1.legend(fontsize=10)
 
 ########################## PLOTTING LOG(E) GRAPH ###########################
 ax2.set_xscale("log")
 ax2.set_title(
     "Exponentiation by Squaring Method and \n Modulo the exponent with Exponentiation by squaring Method", fontsize=10)
-ax2.set_xlabel("e value (log)", fontsize=10)
+ax2.set_xlabel("ln(e) value", fontsize=10)
 ax2.plot(x_log, timeSquareAndMulMethod, ':',
-         color="blue", label="Exponentiation by Squaring Method", marker="+")
+         color="blue", label="Exponentiation by Squaring", marker="+")
 # m, b = np.polyfit(x_e, timeSquareAndMulMethod, 1)
 # ax2.plot(x_log, m*x_e+b,
 #          label="Square And Multiply Algorithm", color="orange")
 
 ax2.plot(x_log, timeExponentModularWithSquareMethod,
-         color="green", label="Modulo the exponent with Exponentiation by squaring Method", marker="x")
+         color="green", label="Modulo the exponent with Exponentiation by squaring", marker="x")
 # m, b = np.polyfit(x_e, timeExponentModularWithSquareMethod, 1)
 # ax2.plot(x_log, m*x_e+b,
 #          label="Exponential And Modular With Square Method", color="green")
@@ -456,9 +458,9 @@ ax2.plot(x_log, timeExponentModularWithSquareMethod,
 #     ax2.annotate(f"log(e) = {round(x_log[i], 2)}", (x_log[i],
 #                  timeExponentModularWithSquareMethod[i]), fontsize=7)
 ax2.grid()
+ax2.legend(fontsize=10)
 
-
-plt.legend(fontsize=15)
+# plt.legend(fontsize=15)
 # plt.yticks(np.arange(0, timeSquareAndMulMethod[-1], timeSquareAndMulMethod[-1]/100))
 
 
