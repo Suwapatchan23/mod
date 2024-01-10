@@ -299,11 +299,11 @@ for i in range(0, len(type7E)):
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 8))
 ########################## PLOTTING E GRAPH ###########################
 ax1.set_title(
-    "All Methods", fontsize=10)
-ax1.set_xlabel("e value", fontsize=10)
+    "All Methods", fontsize=14)
+ax1.set_xlabel("e value", fontsize=14)
 
 ax1.set_ylabel(
-    f"Computation time in ms [ b = {inputB[w_type-1]} | m = {inputM[w_type-1]} ] ", fontsize=10)
+    f"Computation time in ms [ b = {inputB[w_type-1]} | m = {inputM[w_type-1]} ] ", fontsize=14)
 
 
 ax1.plot(x_e, timeMemoryEffMethod, '--',
@@ -356,8 +356,10 @@ ax1.legend(fontsize=10)
 ########################## PLOTTING LOG(E) GRAPH ###########################
 ax2.set_xscale("log")
 ax2.set_title(
-    "All Methods", fontsize=10)
-ax2.set_xlabel("ln(e) value", fontsize=10)
+    "All Methods", fontsize=14)
+ax2.set_xlabel("ln(e) value", fontsize=14)
+ax2.set_ylabel(
+    f"Computation time in ms [ b = {inputB[w_type-1]} | m = {inputM[w_type-1]} ] ", fontsize=14)
 
 ax2.plot(x_log, timeMemoryEffMethod, '--',
          color="red", label="Memory Efficient", marker="o")
@@ -407,11 +409,11 @@ ax2.grid()
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 8))
 ########################## PLOTTING E GRAPH ###########################
 ax1.set_title(
-    "Exponentiation by Squaring Method and \n Modulo the exponent with Exponentiation by squaring Method", fontsize=10)
-ax1.set_xlabel("e value", fontsize=10)
+    "Exponentiation by Squaring Method and \n Modulo the exponent with Exponentiation by squaring Method", fontsize=12)
+ax1.set_xlabel("e value", fontsize=14)
 
 ax1.set_ylabel(
-    f"Computation time in ms [ b = {inputB[w_type-1]} | m = {inputM[w_type-1]} ] ", fontsize=10)
+    f"Computation time in ms [ b = {inputB[w_type-1]} | m = {inputM[w_type-1]} ] ", fontsize=14)
 
 ax1.plot(x_e, timeSquareAndMulMethod, ':',
          color="blue", label="Exponentiation by Squaring", marker="+")
@@ -437,8 +439,10 @@ ax1.legend(fontsize=10)
 ########################## PLOTTING LOG(E) GRAPH ###########################
 ax2.set_xscale("log")
 ax2.set_title(
-    "Exponentiation by Squaring Method and \n Modulo the exponent with Exponentiation by squaring Method", fontsize=10)
-ax2.set_xlabel("ln(e) value", fontsize=10)
+    "Exponentiation by Squaring Method and \n Modulo the exponent with Exponentiation by squaring Method", fontsize=12)
+ax2.set_xlabel("ln(e) value", fontsize=14)
+ax2.set_ylabel(
+    f"Computation time in ms [ b = {inputB[w_type-1]} | m = {inputM[w_type-1]} ] ", fontsize=14)
 ax2.plot(x_log, timeSquareAndMulMethod, ':',
          color="blue", label="Exponentiation by Squaring", marker="+")
 # m, b = np.polyfit(x_e, timeSquareAndMulMethod, 1)
