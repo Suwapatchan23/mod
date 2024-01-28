@@ -340,19 +340,19 @@ ax1.plot(x_e, timeExponentModularWithSquareMethod,
 #          label="Exponential And Modular With Square Method", color="green")
 
 
-for i in range(0, len(t)):
+# for i in range(0, len(t)):
 
-    ax1.annotate(f"ตัวชี้กำลัง = {x_e[i]}",
-                 (x_e[i], timeMemoryEffMethod[i]), fontsize=6)
+#     ax1.annotate(f"ตัวชี้กำลัง = {x_e[i]}",
+#                  (x_e[i], timeMemoryEffMethod[i]), fontsize=8)
 
-    ax1.annotate(f"ตัวชี้กำลัง = {x_e[i]}", (x_e[i],
-                 timeSquareAndMulMethod[i]), fontsize=6)
+#     ax1.annotate(f"ตัวชี้กำลัง = {x_e[i]}", (x_e[i],
+#                  timeSquareAndMulMethod[i]), fontsize=8)
 
-    ax1.annotate(f"ตัวชี้กำลัง = {x_e[i]}",
-                 (x_e[i], timeExponentModularMethod[i]), fontsize=6)
+#     ax1.annotate(f"ตัวชี้กำลัง = {x_e[i]}",
+#                  (x_e[i], timeExponentModularMethod[i]), fontsize=8)
 
-    ax1.annotate(f"ตัวชี้กำลัง = {x_e[i]}", (x_e[i],
-                 timeExponentModularWithSquareMethod[i]), fontsize=6)
+#     ax1.annotate(f"ตัวชี้กำลัง = {x_e[i]}", (x_e[i],
+#                  timeExponentModularWithSquareMethod[i]), fontsize=8)
 
 # plt.yticks(np.arange(0, 10, 0.01))
 ax1.grid()
@@ -433,11 +433,11 @@ ax1.plot(x_e, timeExponentModularWithSquareMethod,
 #          label="Exponential And Modular With Square Method", color="green")
 
 
-for i in range(0, len(t)):
-    ax1.annotate(f"ตัวชี้กำลัง = {x_e[i]}",
-                 (x_e[i], timeSquareAndMulMethod[i]), fontsize=6)
-    ax1.annotate(f"ตัวชี้กำลัง = {x_e[i]}", (x_e[i],
-                 timeExponentModularWithSquareMethod[i]), fontsize=6)
+# for i in range(0, len(t)):
+#     ax1.annotate(f"ตัวชี้กำลัง = {x_e[i]}",
+#                  (x_e[i], timeSquareAndMulMethod[i]), fontsize=8)
+#     ax1.annotate(f"ตัวชี้กำลัง = {x_e[i]}", (x_e[i],
+#                  timeExponentModularWithSquareMethod[i]), fontsize=8)
 ax1.grid()
 ax1.legend(fontsize=7)
 
